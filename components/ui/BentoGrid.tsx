@@ -1,6 +1,13 @@
+'use client'
+
+import { useState } from "react";
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./GradientBg";
+import { HeroButton } from "./HeroButton";
+import { IoCopyOutline } from "react-icons/io5";
 import GridGlobe from "./GridGlobe";
+import Lottie from "react-lottie";
+import animationData from "@/data/confetti.json"
 
 export const BentoGrid = ({
   className,
@@ -43,6 +50,23 @@ export const BentoGridItem = ({
   const leftLists = ["React.js", 'TypeScript', 'JavaScript', 'HTML']
   const rightLists = ["React Query", "GraphQL", "Next.js", "CSS"]
 
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = () => {
+    const text = "yqh5119@gmail.com";
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+  };
+
+  const defaultOptions = {
+    loop: copied,
+    autoplay: copied,
+    animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  }
+
   return (
     <div
       className={cn(
@@ -78,7 +102,6 @@ export const BentoGridItem = ({
         </div>
         {id === 6 && (
           <BackgroundGradientAnimation>
-            <div className="absolute z-50 flex items-center justify-center text-white font-bold" />
           </BackgroundGradientAnimation>
         )}
         <div
@@ -120,6 +143,25 @@ export const BentoGridItem = ({
                     {item}
                   </span>))}
               </div>
+            </div>
+          )}
+
+          {id === 6 && (
+            <div className="mt-5 relative">
+              <div
+                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
+                  }`}
+              >
+                <Lottie options={defaultOptions} height={200} width={400} />
+              </div>
+
+              <HeroButton
+                title={copied ? "Email is Copied!" : "Copy my email address"}
+                icon={<IoCopyOutline />}
+                position="left"
+                handleClick={handleCopy}
+                otherClasses="!bg-[#161A31]"
+              />
             </div>
           )}
         </div>
