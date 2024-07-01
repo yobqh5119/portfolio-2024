@@ -54,18 +54,18 @@ export const BentoGridItem = ({
 
   const handleCopy = () => {
     const text = "yqh5119@gmail.com";
-    navigator.clipboard.writeText(text);
-    setCopied(true);
+    navigator.clipboard.writeText(text)
+    setCopied(true)
   };
 
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  }
+  // const defaultOptions = {
+  //   loop: copied,
+  //   autoplay: copied,
+  //   animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: 'xMidYMid slice'
+  //   }
+  // }
 
   return (
     <div
@@ -149,10 +149,16 @@ export const BentoGridItem = ({
           {id === 6 && (
             <div className="mt-5 relative">
               <div
-                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
-                  }`}
+                className={`absolute -bottom-5 right-0 pointer-events-none`}
               >
-                <Lottie options={defaultOptions} height={200} width={400} />
+                <Lottie options={{
+                  loop: copied,
+                  autoplay: copied,
+                  animationData,
+                  rendererSettings: {
+                    preserveAspectRatio: 'xMidYMid slice'
+                  }
+                }} />
               </div>
 
               <HeroButton
@@ -160,7 +166,6 @@ export const BentoGridItem = ({
                 icon={<IoCopyOutline />}
                 position="left"
                 handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
               />
             </div>
           )}
