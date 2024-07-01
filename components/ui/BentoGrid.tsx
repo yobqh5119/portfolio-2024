@@ -58,14 +58,14 @@ export const BentoGridItem = ({
     setCopied(true)
   };
 
-  // const defaultOptions = {
-  //   loop: copied,
-  //   autoplay: copied,
-  //   animationData,
-  //   rendererSettings: {
-  //     preserveAspectRatio: 'xMidYMid slice'
-  //   }
-  // }
+  const defaultOptions = {
+    loop: copied,
+    autoplay: copied,
+    animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  }
 
   return (
     <div
@@ -151,14 +151,7 @@ export const BentoGridItem = ({
               <div
                 className={`absolute -bottom-5 right-0 pointer-events-none`}
               >
-                <Lottie options={{
-                  loop: copied,
-                  autoplay: copied,
-                  animationData,
-                  rendererSettings: {
-                    preserveAspectRatio: 'xMidYMid slice'
-                  }
-                }} />
+                <Lottie options={defaultOptions} />
               </div>
 
               <HeroButton
