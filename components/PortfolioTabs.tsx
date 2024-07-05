@@ -68,16 +68,16 @@ const tabs = [
   },
 ];
 
-export function PortfolioTabs() {
+function PortfolioTabs() {
   return (
     <>
-      <div className='pt-20'>
+      <div className='pt-20 my-20'>
         <h1 className="heading">
           Work {' '}
           <span className='text-purple'>History</span>
         </h1>
-        <div className='flex- flex-wrap items-center p-4 gap-16'>
-          <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full  items-start mb-40">
+        <div className='flex flex-wrap items-center p-4 gap-16'>
+          <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full items-start mb-40">
             <Tabs tabs={tabs} />
           </div>
         </div>
@@ -86,3 +86,5 @@ export function PortfolioTabs() {
 
   );
 }
+
+export default PortfolioTabs
