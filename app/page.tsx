@@ -7,6 +7,7 @@ import FloatingNav from "@/components/ui/FloatingNav";
 import Grid from "@/components/Grid";
 import RecentProjects from "@/components/RecentProjects";
 import PortfolioTabs from "@/components/PortfolioTabs";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         {/* <RecentProjects /> */}
         <About />
         <PortfolioTabs />
+        <Footer />
       </div>
     </main>
   );
