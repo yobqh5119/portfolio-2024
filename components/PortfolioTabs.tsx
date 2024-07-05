@@ -71,7 +71,7 @@ const tabs = [
 function PortfolioTabs() {
   return (
     <>
-      <div className='pt-20 my-20'>
+      <div className='pt-20 my-20' id="workHistory">
         <h1 className="heading">
           Work {' '}
           <span className='text-purple'>History</span>

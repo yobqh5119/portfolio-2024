@@ -5,7 +5,7 @@ import ProfilePic from '../assets/profile.jpeg'
 
 const About = () => {
   return (
-    <div className='py-20 my-20'>
+    <div className='py-20 my-20' id="about">
       <h1 className="heading">
         About {' '}
         <span className='text-purple'>Me</span>
